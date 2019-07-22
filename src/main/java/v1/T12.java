@@ -1,4 +1,4 @@
-package history;
+package v1;
 
 public class T12 {
     public static void main(String[] args) {

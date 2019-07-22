@@ -1,6 +1,4 @@
-package history;
-
-import java.util.Arrays;
+package v1;
 
 public class T307 {
     public static class NumArray {
