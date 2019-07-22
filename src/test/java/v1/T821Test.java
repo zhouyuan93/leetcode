@@ -13,7 +13,7 @@ class T821Test {
     @Test
     public void test_case_1(){
         String S = "loveleetcode";
-        String C = "e";
+        char C = 'e';
         int[] res = t.shortestToChar(S, C);
         int[] expected = new int[]{3, 2, 1, 0, 1, 0, 0, 1, 2, 2, 1, 0};
         assertEquals(Arrays.toString(expected), Arrays.toString(res));
