@@ -63,6 +63,31 @@ public class TreeNode {
                 + (right == null ? "null " : right.toString())
                 + "]";
     }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj instanceof TreeNode) {
+            TreeNode objTree = (TreeNode) obj;
+            if (this.left == null && null != objTree.left) {
+                return false;
+            }
+            if (this.right == null && null != objTree.right) {
+                return false;
+            }
+            return this.val == objTree.val
+                    && (this.left == null || this.left.equals(objTree.left))
+                    && (this.right == null || this.right.equals(objTree.right));
+        }
+        return false;
+    }
+
+    @Override
+    public int hashCode() {
+        return toString().hashCode();
+    }
 }
 
 
