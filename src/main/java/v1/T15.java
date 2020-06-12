@@ -6,11 +6,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class T15 {
-    public static void main(String[] args) {
-        T15 t = new T15();
-        System.out.println(t.threeSum(new int[]{-4,-2,1,-5,-4,-4,4,-2,0,4,0,-2,3,1,-5,0}));
 
-    }
     public List<List<Integer>> threeSum(int[] nums) {
         if (nums.length < 3) {
             return new ArrayList<>();
