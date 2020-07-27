@@ -10,7 +10,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class QuickSortTest {
 
     @Test
-    void test_adjustArray_when_gaven_one_array_1() {
+    void test_adjustArray_when_given_one_array_1() {
         int[] nums = {5, 2, 1, 7, 3, 8, 4, 6};
         int targetLocation = QuickSort.adjustArray(nums, 0, nums.length - 1);
 
@@ -22,7 +22,7 @@ class QuickSortTest {
     }
 
     @Test
-    void test_adjustArray_when_gaven_one_array_2() {
+    void test_adjustArray_when_given_one_array_2() {
         int[] nums = {1, 2, 3, 4, 5, 6, 7, 8};
         int targetLocation = QuickSort.adjustArray(nums, 0, nums.length - 1);
 
@@ -34,7 +34,7 @@ class QuickSortTest {
     }
 
     @Test
-    void test_adjustArray_when_gaven_one_array_3() {
+    void test_adjustArray_when_given_one_array_3() {
         int[] nums = {8, 7, 6, 5, 4, 3, 2, 1};
         int targetLocation = QuickSort.adjustArray(nums, 0, nums.length - 1);
 
@@ -46,7 +46,7 @@ class QuickSortTest {
     }
 
     @Test
-    void test_quickSort_when_gaven_one_array_1() {
+    void test_quickSort_when_given_one_array_1() {
         int[] nums = {8, 7, 6, 5, 4, 3, 2, 1};
 
         QuickSort.run(nums);
@@ -59,7 +59,7 @@ class QuickSortTest {
     }
 
     @Test
-    void test_quickSort_when_gaven_one_array_2() {
+    void test_quickSort_when_given_one_array_2() {
         int[] nums = {1, 2, 3, 4, 5, 6, 7, 8};
 
         QuickSort.run(nums);
@@ -72,8 +72,8 @@ class QuickSortTest {
     }
 
     @Test
-    void test_quickSort_when_gaven_one_array_3() {
-        int[] nums = {6,2,1,4,3,8,7,5};
+    void test_quickSort_when_given_one_array_3() {
+        int[] nums = {6, 2, 1, 4, 3, 8, 7, 5};
 
         QuickSort.run(nums);
 
