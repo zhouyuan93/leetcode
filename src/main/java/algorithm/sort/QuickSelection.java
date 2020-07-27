@@ -59,13 +59,9 @@ public class QuickSelection {
 
 
         if (left < right) {
-
             int split = adjustArray(nums, left, right);
-
             divideAndConquer(nums, split + 1, right, target1, target2);
-
             divideAndConquer(nums, left, split - 1, target1, target2);
-
         }
 
     }
