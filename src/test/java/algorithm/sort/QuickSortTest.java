@@ -1,5 +1,6 @@
-package algorithm;
+package algorithm.sort;
 
+import algorithm.sort.QuickSort;
 import org.junit.jupiter.api.Test;
 
 import java.util.Arrays;
