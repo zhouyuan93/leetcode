@@ -18,8 +18,8 @@ public class QuickSelection {
 
     public static double getMedian(int[] nums) {
         boolean flag = nums.length % 2 == 0;
-        int target1 = nums.length / 2 - 1;
-        int target2 = flag ? target1 + 1 : target1 + 2;
+        int target1 = nums.length / 2 ;
+        int target2 = flag ? target1 - 1 : target1;
 
         divideAndConquer(nums, 0, nums.length - 1, target1, target2);
 

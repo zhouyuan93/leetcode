@@ -112,4 +112,28 @@ class QuickSelectionTest {
         assertEquals(except, actual);
 
     }
+
+    @Test
+    void test_quickSelection_when_given_one_array_7() {
+        int[] nums = {1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 3, 3, 3, 3, 3, 3, 3};
+
+        double actual = QuickSelection.getMedian(nums);
+
+        double except = 2;
+
+        assertEquals(except, actual);
+
+    }
+
+    @Test
+    void test_quickSelection_when_given_one_array_8() {
+        int[] nums = {3, 3, 3, 2, 2, 2, 3, 2, 1, 1, 2, 1, 2, 3, 3, 3, 1, 2};
+
+        double actual = QuickSelection.getMedian(nums);
+
+        double except = 2;
+
+        assertEquals(except, actual);
+
+    }
 }
