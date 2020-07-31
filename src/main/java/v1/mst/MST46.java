@@ -1,4 +1,4 @@
-package v1;
+package v1.mst;
 
 public class MST46 {
     public int translateNum(int num) {

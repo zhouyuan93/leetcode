@@ -1,8 +1,8 @@
-package v1;
+package v1.mst;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import v1.MST29;
+import v1.mst.MST29;
 
 import static org.junit.jupiter.api.Assertions.*;
 
