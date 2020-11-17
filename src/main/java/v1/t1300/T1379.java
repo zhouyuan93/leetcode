@@ -6,6 +6,7 @@ import java.util.Optional;
 
 /**
  * @author yuan.zhou
+ * 应该直接内存地址比较
  */
 public class T1379 {
     public final TreeNode getTargetCopy(final TreeNode original, final TreeNode cloned, final TreeNode target) {
