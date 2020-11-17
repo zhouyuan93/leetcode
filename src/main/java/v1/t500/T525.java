@@ -15,9 +15,8 @@ public class T525 {
             return 0;
         }
 
-        Map<Integer, List<Integer>> map = new HashMap<>();
-        map.put(0, new ArrayList<>());
-        map.get(0).add(-1);
+        Map<Integer, Integer> map = new HashMap<>();
+        map.put(0, -1);
 
         int res = 0;
         int sum = 0;
@@ -29,13 +28,10 @@ public class T525 {
             }
 
             if (map.containsKey(sum)) {
-                map.get(sum).add(i);
-                int len = i - map.get(sum).get(0);
+                int len = i - map.get(sum);
                 res = Math.max(len, res);
             }else{
-                List<Integer> list = new ArrayList<>();
-                list.add(i);
-                map.put(sum, list);
+                map.put(sum, i);
             }
 
         }
