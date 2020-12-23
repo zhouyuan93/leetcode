@@ -15,7 +15,6 @@ public class T200 {
 
         Map<Integer, Integer> trans = new HashMap<>();
 
-        int res = 0;
         for (int y = 0; y < grid.length; y++) {
             for (int x = 0; x < grid[0].length; x++) {
                 //海不做处理
