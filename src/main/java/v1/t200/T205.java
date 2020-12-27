@@ -1,13 +1,43 @@
 package v1.t200;
 
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map;
+import java.util.Set;
 
 /**
  * @author yuan.zhou
  */
 public class T205 {
     public boolean isIsomorphic(String s, String t) {
+        if (s.length() != t.length()) {
+            return false;
+        }
+        Map<Integer, Integer> trans = new HashMap<>();
+        Set<Integer> transValue = new HashSet<>();
+
+        for (int i = 0; i < s.length(); i++) {
+            int sa = s.charAt(i) - 'a';
+            int ta = t.charAt(i) - 'a';
+
+            if (!trans.containsKey(sa)) {
+                if (transValue.contains(ta)) {
+                    return false;
+                }
+                trans.put(sa, ta);
+                transValue.add(ta);
+            } else {
+                sa = trans.get(sa);
+                if (ta != sa) {
+                    return false;
+                }
+            }
+        }
+
+        return true;
+
+    }
+    public boolean isIsomorphic_2(String s, String t) {
         char[] sc = s.toCharArray();
         char[] tc = t.toCharArray();
 
