@@ -13,12 +13,12 @@ public class T768 {
 
         int res = 1;
         int max = arr[0];
-        int maxIndex = findIndex(sortArr, max);
+        int maxIndex = findIndex(sortArr, max, -1);
         boolean isAdd = false;
         for (int i = 0; i < arr.length; i++) {
             if (arr[i] > max) {
                 max = arr[i];
-                maxIndex = findIndex(sortArr, max);
+                maxIndex = findIndex(sortArr, max, maxIndex);
             }else{
                 if (max == arr[i]) {
                     if (!isAdd) {
@@ -32,7 +32,7 @@ public class T768 {
                         res++;
                         if(arr[i+1] != max){
                             max = arr[i + 1];
-                            maxIndex = findIndex(sortArr, max);
+                            maxIndex = findIndex(sortArr, max, maxIndex);
                         }
                         isAdd = false;
                     }
@@ -43,8 +43,7 @@ public class T768 {
         return res;
     }
 
-    public int findIndex(int[] sortArr, int target) {
-        int left = -1;
+    public int findIndex(int[] sortArr, int target, int left) {
         int right = sortArr.length-1;
         while (right - left > 1) {
             int mid = (left + right) / 2;
