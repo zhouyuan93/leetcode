@@ -3,7 +3,7 @@ package v1.t900;
 /**
  * @author yuan.zhou
  */
-public class T920 {
+public class T902 {
     public int atMostNGivenDigitSet(String[] digits, int n) {
         if (digits == null || digits.length == 0) {
             return 0;
