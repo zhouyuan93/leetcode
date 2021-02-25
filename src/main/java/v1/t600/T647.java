@@ -3,7 +3,7 @@ package v1.t600;
 /**
  * @author yuan.zhou
  */
-public class T674 {
+public class T647 {
 
     public int countSubstrings(String s) {
         int n = s.length();
