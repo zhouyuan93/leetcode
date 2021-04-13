@@ -1,7 +1,5 @@
 package v1.t700;
 
-import com.sun.deploy.util.StringUtils;
-
 public class T709 {
     private static int DEF = 'A' - 'a';
 
