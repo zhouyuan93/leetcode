@@ -10,8 +10,7 @@ public class T1218 {
 
     public int longestSubsequence(int[] arr, int difference) {
         int res = 0;
-        Map<Integer, Integer> upMap = new HashMap<>();
-        Map<Integer, Integer> downMap = new HashMap<>();
+        Map<Integer, Integer> upMap = new HashMap<>(2 * arr.length);
         for (int x : arr) {
             int upBefore = x - difference;
             int upTemp = Math.max(upMap.getOrDefault(x, 1), upMap.getOrDefault(upBefore,0) + 1);
