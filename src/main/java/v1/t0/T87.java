@@ -5,15 +5,8 @@ import java.util.Map;
 
 public class T87 {
     public boolean isScramble(String s1, String s2) {
-        if (s1.equals(s2)) {
-            return true;
-        }
-        if (s1.length() == 1 && s1.equals(s2)) {
-            return true;
-        }
-        Map<Integer, Map<Integer, Boolean>> map = new HashMap<>(s1.length() * s1.length() * 2);
+        Map<Integer, Map<Integer, Boolean>> map = new HashMap<>(s1.length() * 4);
         boolean res = isScramble(s1, s2, 0, s1.length()-1, 0, s2.length()-1, map);
-
         return res;
     }
 
