@@ -1,5 +1,7 @@
 package v1.t300;
 
+import java.util.TreeSet;
+
 /**
  * @author yuan.zhou
  */
@@ -52,6 +54,37 @@ public class T363 {
                 }
             }
         }
+        return res;
+    }
+
+    public int maxSumSubmatrix2(int[][] mat, int k) {
+        int m = mat.length, n = mat[0].length;
+
+        // 预处理前缀和 这里可以m , n 交换
+        int[][] sum = new int[m+1][n+1];
+        for (int i = 1; i <= mat.length; i++) {
+            for (int j = 1; j <= mat[i].length; j++) {
+                sum[i][j] = sum[i - 1][j] + sum[i][j - 1] - sum[i - 1][j - 1] + mat[i - 1][j - 1];
+            }
+        }
+
+        int res = Integer.MIN_VALUE;
+        for (int top = 1; top <= m; top++) {
+            for (int bot = top; bot <= m; bot++) {
+                TreeSet<Integer> ts = new TreeSet<>();
+                ts.add(0);
+                for (int r = 1; r < n; r++) {
+                    int right = sum[bot][r] - sum[top - 1][r];
+                    Integer left = ts.ceiling(right - k);
+                    if (left != null) {
+                        int cur = right - left;
+                        res = Math.max(res, cur);
+                    }
+                    ts.add(right);
+                }
+            }
+        }
+
         return res;
     }
 
