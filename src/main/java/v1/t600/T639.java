@@ -30,6 +30,8 @@ public class T639 {
                     res += y * 2;
                 } else if (before == '1' || before == '2') {
                     res += y;
+                } else {
+                    return 0;
                 }
             } else if (c > '0' && c <= '6') {
                 res += x;
