@@ -64,7 +64,6 @@ public class T1319 {
                     }else{
                         cx.updateNextConnect(cy);
                     }
-                    System.out.println(typeY +" "+ typeX);
                     typeCount--;
                 }
             }
