@@ -4,7 +4,7 @@ public class T639 {
     public static final int MOD = 1000000007;
 
     public int numDecodings(String s) {
-        if(s.charAt(0) == '0'){
+        if (s.charAt(0) == '0') {
             return 0;
         }
         int p = 0;
@@ -13,37 +13,37 @@ public class T639 {
         char c;
         char before = '-';
         while (p < s.length()) {
-            int res = 0;
+            long res = 0;
 
             c = s.charAt(p++);
             if (c == '*') {
-                res += (x * 9) % MOD;
-            } else if (c != '0') {
-                res += (x) % MOD;
+                res += (x * 9);
+                if (before == '*') {
+                    res += y * 15;
+                } else if (before == '1') {
+                    res += y * 9;
+                } else if (before == '2') {
+                    res += y * 6;
+                }
+            } else if (c == '0') {
+                if (before == '*') {
+                    res += y * 2;
+                } else if (before == '1' || before == '2') {
+                    res += y;
+                }
+            } else if (c > '0' && c <= '6') {
+                res += x;
+                if (before == '*') {
+                    res += y * 2;
+                } else if (before == '1' || before == '2') {
+                    res += y;
+                }
+            } else {
+                res += x;
+                if (before == '1' || before == '*') {
+                    res += y;
+                }
             }
-
-            if (before == '*') {
-                if (c == '*') {
-                    res += (y * 15) % MOD;
-                } else if (c >= '0' && c <= '6') {
-                    res += (y * 2) % MOD;
-                } else {
-                    res += (y) % MOD;
-                }
-            } else if (before == '1') {
-                if (c == '*') {
-                    res += (y * 9) % MOD;
-                } else {
-                    res += (y) % MOD;
-                }
-            } else if (before == '2') {
-                if (c == '*') {
-                    res += (y * 6) % MOD;
-                } else if (c >= '0' && c <= '6') {
-                    res += (y) % MOD;
-                }
-            }
-
 
             before = c;
             y = x;

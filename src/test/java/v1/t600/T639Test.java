@@ -87,4 +87,12 @@ class T639Test {
         int expected = 196465252;
         assertEquals(expected, actual);
     }
+
+    @Test
+    void test_10() {
+        String s = "1*1*22*19";
+        int actual = t.numDecodings(s);
+        int expected = 19064;
+        assertEquals(expected, actual);
+    }
 }
