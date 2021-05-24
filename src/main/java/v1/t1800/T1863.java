@@ -1,9 +1,9 @@
-package v1.t5000;
+package v1.t1800;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class T5759 {
+public class T1863 {
     List<Integer> res = new ArrayList<>();
     int sum = 0;
 

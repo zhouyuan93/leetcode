@@ -1,6 +1,6 @@
-package v1.t5000;
+package v1.t1800;
 
-public class T5762 {
+public class T1866 {
     public static int MOD = 1_000_000_007;
     public static Long[][] dp;
 

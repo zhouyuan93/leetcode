@@ -1,6 +1,6 @@
-package v1.t5000;
+package v1.t1800;
 
-public class T5760 {
+public class T1864 {
     public int minSwaps(String s) {
         int res1 = 0;
         int res0 = 0;
