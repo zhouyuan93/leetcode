@@ -5,13 +5,13 @@ import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class T1460Test {
+class T1406Test {
 
-    T1460 t;
+    T1406 t;
 
     @BeforeEach
     void setUp() {
-        t = new T1460();
+        t = new T1406();
     }
 
     @Test

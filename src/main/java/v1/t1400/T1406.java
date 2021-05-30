@@ -1,6 +1,6 @@
 package v1.t1400;
 
-public class T1460 {
+public class T1406 {
     public String stoneGameIII(int[] stoneValue) {
         if (stoneValue == null || stoneValue.length == 0) {
             return "Tie";
