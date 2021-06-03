@@ -2,6 +2,7 @@ package v1.t1200;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import v1.t1000.T1025;
 
 import static org.junit.jupiter.api.Assertions.*;
 
