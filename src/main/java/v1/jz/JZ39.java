@@ -8,25 +8,21 @@ public class JZ39 {
         // int 32位
         int[] memo = new int[32];
         for (int num : nums) {
-            if (num < 0) {
-                memo[31]++;
-            }
-
-            for (int i = 0; i < 31; i++) {
-                if ((num & (1 << i)) > 0) {
+            for (int i = 0; i < 32 && num != 0;  i++) {
+                if ((num & 1) > 0) {
                     memo[i]++;
                 }
+                num >>>= 1;
+
             }
         }
         int res = 0;
-        int helf = nums.length / 2;
-        for (int i = 0; i < 31; i++) {
-            if (memo[i] > helf) {
-                res |= (1 << i);
+        int half = nums.length / 2;
+        for (int i = 31 ; i >= 0; i--) {
+            res <<= 1;
+            if (memo[i] > half) {
+               res |= 1;
             }
-        }
-        if (memo[31] > helf) {
-            res = Integer.MIN_VALUE + res;
         }
 
         return res;
