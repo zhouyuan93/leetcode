@@ -6,7 +6,7 @@ import java.util.Set;
 /**
  * @author yuan.zhou
  */
-public class T218 {
+public class T219 {
     public boolean containsNearbyDuplicate(int[] nums, int k) {
         if (nums.length == 0) {
             return false;
