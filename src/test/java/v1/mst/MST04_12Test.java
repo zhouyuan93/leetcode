@@ -2,12 +2,11 @@ package v1.mst;
 
 import common.tree.TreeNode;
 import common.tree.TreeTraversal;
-import common.util.LeetcodeTreeNodeUtil;
+import common.util.LeetcodeUtil;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
-import static org.junit.jupiter.api.Assertions.*;
 
 class MST04_12Test {
     MST04_12 t;
@@ -27,7 +26,7 @@ class MST04_12Test {
 
     @Test
     void test_2() {
-        TreeNode root = LeetcodeTreeNodeUtil.initTreeNode("[-2,null,-3]");
+        TreeNode root = LeetcodeUtil.initTreeNode("[-2,null,-3]");
         int a = t.pathSum(root, -5);
         int e = 1;
         assertThat(a).isEqualTo(e);
