@@ -69,11 +69,6 @@ public class T1765 {
 
             }
 
-            for (int[] ints : isWater) {
-                System.out.println(Arrays.toString(ints));
-            }
-            System.out.println(" ");
-
             floor++;
             p ^= 1;
             q ^= 1;
