@@ -37,7 +37,7 @@ class T691Test {
         String[] s = {"indicate","why","finger","star","unit","board","sister","danger","deal","bit","phrase","caught","if","other","water","huge","general","read","gold","shall","master","men","lay","party","grow","view","if","pull","together","head","thank","street","natural","pull","raise","cost","spoke","race","new","race","liquid","me","please","clear","could","reply","often","huge","old","nor"};
         String target = "fhhfiyfdcwbycma";
         int a = t.minStickers(s, target);
-        int e = 3;
+        int e = 9;
         assertEquals(e,a);
     }
 }
