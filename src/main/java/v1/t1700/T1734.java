@@ -1,6 +1,6 @@
 package v1.t1700;
 
-public class T1743 {
+public class T1734 {
     public int[] decode(int[] encoded) {
         int n = encoded.length+1;
         int x = 1;

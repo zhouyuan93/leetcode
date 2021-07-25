@@ -7,13 +7,13 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
-class T1743Test {
+class T1734Test {
 
-    T1743 t;
+    T1734 t;
 
     @BeforeEach
     void setUp() {
-        t = new T1743();
+        t = new T1734();
     }
 
     @Test
