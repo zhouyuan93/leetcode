@@ -15,9 +15,8 @@ public class T611 {
             for (int j = i - 1, k = 0; k < j; j--) {
                 while (k < j && nums[k] + nums[j] <= nums[i]) {
                     k++;
-                    ans += j - k;
-
                 }
+                ans += j - k;
             }
         }
 
