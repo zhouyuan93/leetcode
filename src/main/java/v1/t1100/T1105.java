@@ -1,7 +1,5 @@
 package v1.t1100;
 
-import sun.nio.cs.ext.MacHebrew;
-
 import java.util.Arrays;
 
 public class T1105 {

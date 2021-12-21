@@ -1,7 +1,5 @@
 package v1.t700;
 
-import sun.misc.Queue;
-
 import java.util.*;
 
 public class T752 {
