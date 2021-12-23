@@ -5,10 +5,10 @@ import java.util.Arrays;
 public class KmpFind {
     public static void main(String[] args) {
         KmpFind t = new KmpFind();
-        System.out.println(Arrays.toString(t.getNextArray("abab".toCharArray())));
+        System.out.println(Arrays.toString(t.getNextArray("aac".toCharArray())));
 
-        String s = "adfsjdlkjkgefasdddddasdefjlsksfjgekjasdkf";
-        String pat = "asdddddasd";
+        String s = "aaac";
+        String pat = "aac";
         System.out.println(s.indexOf(pat));
         System.out.println(t.kmp(s,pat));
     }
@@ -41,7 +41,7 @@ public class KmpFind {
         next[0] = -1;
 
         int p = -1;
-        int i = 1;
+        int i = 0;
 
         while (i < chars.length - 1) {
             if (p == -1 || chars[p] == chars[i]) {
