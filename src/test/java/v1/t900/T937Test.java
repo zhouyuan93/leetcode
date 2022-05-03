@@ -1,45 +1,34 @@
 package v1.t900;
 
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-
-import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.*;
 
 class T937Test {
 
-    T937 t;
-
-    @BeforeEach
-    void setUp() {
-        t = new T937();
-    }
+    T937 t = new T937();
 
     @Test
-    void test_1() {
-        int[][] points = {{1,3},{-2,2}};
-        int K = 1;
-        int[][] actual = t.kClosest(points, K);
-        int[][] expected = {{-2,2}};
+    void test_11111111111111111() {
+        String[] logs = {"dig1 8 1 5 1", "let1 art can", "dig2 3 6", "let2 own kit dig", "let3 art zero"};
+        String[] actual = t.reorderLogFiles(logs);
+        String[] expected = {"let1 art can", "let3 art zero", "let2 own kit dig", "dig1 8 1 5 1", "dig2 3 6"};
         assertArrayEquals(expected,actual);
     }
 
     @Test
-    void test_2() {
-        int[][] points = {{1,3},{-2,2},{-3,-3}};
-        int K = 1;
-        int[][] actual = t.kClosest(points, K);
-        int[][] expected = {{-2,2}};
+    void test_1111111111111111() {
+        String[] logs = {"1 n u", "r 527", "j 893", "6 14", "6 82"};
+        String[] actual = t.reorderLogFiles(logs);
+        String[] expected = {"1 n u","r 527","j 893","6 14","6 82"};
         assertArrayEquals(expected,actual);
     }
 
     @Test
-    void test_3() {
-        int[][] points = {{3,3},{5,-1},{-2,4}};
-        int K = 2;
-        int[][] actual = t.kClosest(points, K);
-        int[][] expected = {{3,3},{-2,4}};
+    void test_111111111111111() {
+        String[] logs = {"zoey i love you","lucas i love you","rong i love you"};
+        String[] actual = t.reorderLogFiles(logs);
+        String[] expected = {"lucas i love you","rong i love you","zoey i love you"};
         assertArrayEquals(expected,actual);
     }
 }
