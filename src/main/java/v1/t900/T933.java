@@ -23,4 +23,23 @@ public class T933 {
             return queue.size();
         }
     }
+
+    public static class RecentCounter2{
+
+        Queue<Integer> queue;
+
+
+        public RecentCounter2() {
+            queue = new LinkedList<>();
+        }
+
+        public int ping(int t) {
+            queue.offer(t);
+            while (queue.peek() < t-3000)  {
+               queue.poll();
+            }
+            return queue.size();
+        }
+
+    }
 }
