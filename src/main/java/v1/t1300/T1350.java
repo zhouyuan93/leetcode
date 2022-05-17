@@ -42,4 +42,55 @@ public class T1350 {
         add(node.right);
     }
 
+    ///////////////////////////////////////////////////////////////////////////////////////////////////////
+
+    public List<Integer> getAllElements2(TreeNode root1, TreeNode root2) {
+        traverse1(root1);
+        traverse2(root2);
+        while (head != null) {
+            res.add(head.val);
+            head = head.right;
+        }
+        return res;
+    }
+
+    List<Integer> res = new ArrayList<>();
+    TreeNode head,pre;
+    public void traverse1(TreeNode node) {
+        if (node == null) {
+            return;
+        }
+
+        traverse1(node.left);
+
+        if (head == null) {
+            head = node;
+            pre = node;
+        }else{
+            pre.right = node;
+            pre = pre.right;
+        }
+
+        traverse1(node.right);
+    }
+
+    public void traverse2(TreeNode node) {
+        if (node == null) {
+            return;
+        }
+
+        traverse2(node.left);
+
+        while (head != null && head.val < node.val) {
+            res.add(head.val);
+            head = head.right;
+        }
+        res.add(node.val);
+
+        traverse2(node.right);
+
+    }
+
+
+
 }
