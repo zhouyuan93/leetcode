@@ -5,6 +5,8 @@ import common.tree.TreeTraversal;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.Arrays;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class T508Test {
@@ -20,6 +22,7 @@ class T508Test {
         TreeNode root = TreeNode.initByArray(new Integer[]{5,2, -3}, TreeTraversal.NLR);
         int[] actual = t.findFrequentTreeSum(root);
         int[] expected = {2, -3, 4};
+        System.out.println(Arrays.toString(actual));
         assertArrayEquals(expected, actual);
     }
     @Test
