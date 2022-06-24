@@ -33,5 +33,29 @@ public class T515 {
         dealValues(treeNode.right, i + 1, res);
     }
 
+    List<Integer> res = new ArrayList();
+    public List<Integer> largestValues2(TreeNode root) {
+
+        bfs(root,0);
+
+        return res;
+
+    }
+
+    public void bfs(TreeNode node , int f){
+        if(node == null){
+            return;
+        }
+
+        if(res.size() <= f){
+            res.add(node.val);
+        }else if(res.get(f) < node.val){
+            res.set(f,node.val);
+        }
+
+        f++;
+        bfs(node.left,f);
+        bfs(node.right,f);
+    }
 
 }
