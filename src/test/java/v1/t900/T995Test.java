@@ -49,4 +49,13 @@ class T995Test {
         int expected = 3;
         assertEquals(expected,actual);
     }
+
+    @Test
+    void test_5() {
+        int[] nums = {0,1,1,1,0,0,0};
+        int k = 2;
+        int actual = t.minKBitFlips(nums, k);
+        int expected = 5;
+        assertEquals(expected,actual);
+    }
 }

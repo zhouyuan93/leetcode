@@ -9,18 +9,15 @@ public class T995 {
 
         int count = 0;
 
-        int[] memo = new int[k];
+        int[] memo = new int[nums.length + 1];
         int l = 0;
         int r = 0;
-        int len = 0;
-
 
         for (int i = 0; i < nums.length; i++) {
-            while (len > 0 && memo[l] < i - k + 1) {
-                l = getNext(l, k);
-                len--;
+            while (r - l > 0 && memo[l] < i - k + 1) {
+                l++;
             }
-            if ((len & 1) > 0 ? nums[i] == 0 : nums[i] == 1) {
+            if (((r ^ l) & 1) != nums[i]) {
                 continue;
             }
 //            nums[i] = 1;
@@ -29,21 +26,12 @@ public class T995 {
             }
             count++;
             memo[r] = i;
-            r = getNext(r, k);
-            len++;
+            r++;
         }
 
         return count;
 
-
     }
 
-    public int getNext(int x, int k) {
-        x++;
-        if (x >= k) {
-            x = 0;
-        }
-        return x;
-    }
 
 }
