@@ -9,14 +9,18 @@ public class T995 {
 
         int count = 0;
 
-        List<Integer> list = new LinkedList<>();
+        int[] memo = new int[k];
+        int l = 0;
+        int r = 0;
+        int len = 0;
+
 
         for (int i = 0; i < nums.length; i++) {
-            while (list.size() > 0 && list.get(0) < i - k + 1) {
-                list.remove(0);
+            while (len > 0 && memo[l] < i - k + 1) {
+                l = getNext(l, k);
+                len--;
             }
-
-            if ((list.size() & 1) > 0 ? nums[i] == 0 : nums[i] == 1) {
+            if ((len & 1) > 0 ? nums[i] == 0 : nums[i] == 1) {
                 continue;
             }
 //            nums[i] = 1;
@@ -24,11 +28,22 @@ public class T995 {
                 return -1;
             }
             count++;
-            list.add(i);
+            memo[r] = i;
+            r = getNext(r, k);
+            len++;
         }
 
         return count;
 
 
     }
+
+    public int getNext(int x, int k) {
+        x++;
+        if (x >= k) {
+            x = 0;
+        }
+        return x;
+    }
+
 }
