@@ -10,7 +10,7 @@ public class KmpFind {
         String s = "aaac";
         String pat = "aac";
         System.out.println(s.indexOf(pat));
-        System.out.println(t.kmp(s,pat));
+        System.out.println(t.kmp2(s,pat));
     }
 
 
@@ -53,6 +53,46 @@ public class KmpFind {
             }
         }
 
+        return next;
+    }
+
+    public int kmp2(String s, String pa) {
+        char[] pat = pa.toCharArray();
+
+        int[] next = getNextArray2(pat);
+
+        int p = 0;
+        int i = 0;
+        while (i < s.length()) {
+            if (p == -1 || pat[p] == s.charAt(i)) {
+                p++;
+                i++;
+                if (p >= pat.length) {
+                    return i - p;
+                }
+            }else {
+                p = next[p];
+            }
+        }
+
+        return -1;
+
+    }
+
+    private int[] getNextArray2(char[] pat) {
+        int[] next = new int[pat.length];
+        next[0] = -1;
+        int p = -1;
+        int i = 0;
+        while (i < pat.length - 1) {
+            if (p == -1 || pat[p] == pat[i]) {
+                p++;
+                i++;
+                next[i] = p;
+            }else{
+                p = next[p];
+            }
+        }
         return next;
     }
 }
