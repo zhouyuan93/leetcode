@@ -3,6 +3,8 @@ package common.tree;
 import java.util.ArrayList;
 import java.util.List;
 
+import static common.tree.TreeTraversal.NLR;
+
 public class TreeNode {
     public int val;
     public TreeNode left;
@@ -10,6 +12,10 @@ public class TreeNode {
 
     public TreeNode(int val) {
         this.val = val;
+    }
+
+    public static TreeNode initByArray(Integer[] nums) {
+        return initByArray(nums,NLR);
     }
 
     public static TreeNode initByArray(Integer[] nums, TreeTraversal type) {
