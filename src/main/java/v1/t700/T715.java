@@ -7,6 +7,9 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * 线段树
+ */
 public class T715 {
     static class RangeModule {
 
