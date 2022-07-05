@@ -41,6 +41,9 @@ public class T402 {
         char[] chars = num.toCharArray();
         StringBuilder res = new StringBuilder();
         remove(chars, k, 0, res);
+        while (res.length() > 0 && res.charAt(0) == '0') {
+            res.deleteCharAt(0);
+        }
         if (res.length() == 0) {
             return "0";
         }
