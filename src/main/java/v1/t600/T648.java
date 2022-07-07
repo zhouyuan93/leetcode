@@ -3,11 +3,67 @@ package v1.t600;
 import java.util.List;
 
 public class T648 {
+
     class TrieNode {
         boolean isEnd = false;
         TrieNode[] children = new TrieNode[26];
     }
+
     public String replaceWords(List<String> dictionary, String sentence) {
+        TrieNode root = new TrieNode();
+
+        for (String s : dictionary) {
+            TrieNode p = root;
+            for (int i = 0; i < s.length(); i++) {
+                int idx = s.charAt(i) - 'a';
+                if (p.children[idx] == null) {
+                    p.children[idx] = new TrieNode();
+                }
+                p = p.children[idx];
+            }
+            p.isEnd = true;
+        }
+
+        int len = sentence.length();
+        int i = 0;
+        StringBuilder res = new StringBuilder();
+
+        while (i < len) {
+            char c = sentence.charAt(i);
+            if (c == ' ') {
+                res.append(c);
+                i++;
+                continue;
+            }
+
+            TrieNode p = root;
+            boolean removeEnd = false;
+            while (i < len) {
+                c = sentence.charAt(i);
+                if (c == ' ') {
+                    break;
+                }
+                if (!removeEnd) {
+                    res.append(c);
+                }
+
+                if (p != null) {
+                    p = p.children[c - 'a'];
+                    if (p != null && p.isEnd) {
+                        removeEnd = true;
+                    }
+                }
+
+                i++;
+            }
+
+        }
+
+        return res.toString();
+
+    }
+
+    public String replaceWords2(List<String> dictionary, String sentence) {
         TrieNode root = new TrieNode();
         for (String s : dictionary) {
             TrieNode node = root;
@@ -59,4 +115,5 @@ public class T648 {
 
         return res.toString();
     }
+
 }
