@@ -5,58 +5,33 @@ import common.tree.TreeNode;
 
 public class T1145 {
     public boolean btreeGameWinningMove(TreeNode root, int n, int x) {
-        int countRoot;
-        int countXLeft;
-        int countXRight;
+        TreeNode p = root;
+        TreeNode nodeX = find(root, x);
+        int l = count(nodeX.left);
+        int r = count(nodeX.right);
+        int f = n - l - r - 1;
 
-        countRoot = n;
-
-        TreeNode t = findNode(root, x);
-        countXLeft = calcCount(t.left);
-        countXRight = calcCount(t.right);
-
-        int y = countRoot - 2 * (countXRight + countXLeft + 1);
-        if (y > 0) {
-            return true;
-        }
-
-        y = countRoot - 2 * countXLeft;
-        if (y < 0) {
-            return true;
-        }
-
-        y = countRoot - 2 * countXRight;
-        if (y < 0) {
-            return true;
-        }
-
-        return false;
+        return (n < 2 * f) || (n < 2 * l) || (n < 2 * r);
     }
 
-    public TreeNode findNode(TreeNode node, int x) {
-        if (node == null) {
+    public TreeNode find(TreeNode root, int x) {
+        if (root == null) {
             return null;
         }
-        if (node.val == x) {
-            return node;
+        if (root.val == x) {
+            return root;
         }
-        TreeNode left = findNode(node.left, x);
+        TreeNode left = find(root.left, x);
         if (left != null) {
             return left;
         }
-        TreeNode right = findNode(node.right, x);
-        if (right != null) {
-            return right;
-        }
-        return null;
+        return find(root.right, x);
     }
 
-    public int calcCount(TreeNode node) {
+    public int count(TreeNode node) {
         if (node == null) {
             return 0;
         }
-        int left = calcCount(node.left);
-        int right = calcCount(node.right);
-        return left + right + 1;
+        return 1 + count(node.left) + count(node.right);
     }
 }
