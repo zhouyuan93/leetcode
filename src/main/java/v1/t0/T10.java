@@ -41,9 +41,8 @@ public class T10 {
         } else if (p[pi] == '*') {
             res = get(dp, s, p, si, pi - 2);
             if (pi - 1 >= 0 && (p[pi - 1] == s[si] || p[pi - 1] == '.')) {
-                res = get(dp, s, p, si - 1, pi - 2)
-                        || get(dp, s, p, si - 1, pi)
-                        || res;
+                res = res || get(dp, s, p, si - 1, pi)
+                        || get(dp, s, p, si - 1, pi - 2);
             }
         } else if (p[pi] == '.') {
             res = get(dp, s, p, si - 1, pi - 1);
