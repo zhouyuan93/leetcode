@@ -55,48 +55,40 @@ public class T37 {
 
     private boolean dfs(char[][] board, Node node, Queue<Node> emptyQueue,
                         int[] setX, int[] setY, int[] setZ) {
-        Set<Character> t = mergeSets(setX[node.x], setY[node.y], setZ[node.z]);
+        int t = setX[node.x]& setY[node.y]& setZ[node.z];
+        if (t == 0) {
+            return false;
+        }
 
-        for (Character c : t) {
-            board[node.y][node.x] = c;
-            int i = FULL - (1 << (c - '1'));
-            setX[node.x] &= i;
-            setY[node.y] &= i;
-            setZ[node.z] &= i;
+        for (int j = 0; j < 9; j++) {
+            if ((t & (1 << j)) > 0) {
+                char c = (char) ('1' + j);
 
-            if (emptyQueue.isEmpty()) {
-                return true;
+                board[node.y][node.x] = c;
+                int i = FULL - (1 << (c - '1'));
+                setX[node.x] &= i;
+                setY[node.y] &= i;
+                setZ[node.z] &= i;
+
+                if (emptyQueue.isEmpty()) {
+                    return true;
+                }
+
+                Node n = emptyQueue.poll();
+                if (dfs(board, n, emptyQueue, setX, setY, setZ)) {
+                    return true;
+                }
+
+                emptyQueue.offer(n);
+                board[node.y][node.x] = '.';
+                i = 1 << (c - '1');
+                setX[node.x] |= i;
+                setY[node.y] |= i;
+                setZ[node.z] |= i;
             }
-
-            Node n = emptyQueue.poll();
-            if (dfs(board, n, emptyQueue, setX, setY, setZ)) {
-                return true;
-            }
-
-            emptyQueue.offer(n);
-            board[node.y][node.x] = '.';
-            i = 1 << (c - '1');
-            setX[node.x] |= i;
-            setY[node.y] |= i;
-            setZ[node.z] |= i;
         }
 
         return false;
-    }
-
-    private Set<Character> mergeSets(int setX, int setY, int setZ) {
-        int t = setX & setY & setZ;
-        Set<Character> res = new HashSet<>();
-        if (t == 0) {
-            return res;
-        }
-        for (int i = 0; i < 9; i++) {
-            if ((t & (1 << i)) > 0) {
-                res.add((char) ('1' + i));
-            }
-        }
-
-        return res;
     }
 
     private int mergeSetsSize(int setX, int setY, int setZ) {
