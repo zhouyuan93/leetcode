@@ -1,7 +1,5 @@
 package v1.t600;
 
-import sun.nio.cs.ext.MacHebrew;
-
 import java.util.ArrayList;
 import java.util.List;
 

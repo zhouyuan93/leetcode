@@ -1,7 +1,5 @@
 package v1.t700;
 
-import com.sun.xml.internal.ws.streaming.TidyXMLStreamReader;
-
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Date;
