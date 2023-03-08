@@ -2,7 +2,6 @@ package v1.t0;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import v1.t0.T64;
 
 import java.util.Arrays;
 
@@ -10,11 +9,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class T64Test {
 
-    private T64 t;
+    private T66 t;
 
     @BeforeEach
     void setUp() {
-        t = new T64();
+        t = new T66();
     }
 
     @Test
