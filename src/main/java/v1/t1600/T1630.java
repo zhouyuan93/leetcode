@@ -11,11 +11,6 @@ public class T1630 {
 
         int[] sum = new int[len+1];
 
-        sum[1] = nums[0];
-        for (int i = 2; i < nums.length; i++) {
-            sum[i] = sum[i - 1] + nums[i];
-        }
-
         List<Boolean> res = new ArrayList<>();
         for (int i = 0; i < l.length; i++) {
             if (r[i] - l[i] < 2) {
