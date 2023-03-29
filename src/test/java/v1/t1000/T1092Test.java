@@ -19,7 +19,7 @@ class T1092Test {
         String str1 = "a";
         String str2 = "bb";
         String actual = t.shortestCommonSupersequence(str1, str2);
-        String expected = "abb";
+        String expected = "bba";
         assertEquals(expected,actual);
     }
 
