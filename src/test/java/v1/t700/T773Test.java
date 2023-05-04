@@ -7,11 +7,11 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class T773Test {
 
-    T773_2 t;
+    T773 t;
 
     @BeforeEach
     void setUp() {
-        t = new T773_2();
+        t = new T773();
     }
 
     @Test
